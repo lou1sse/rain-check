@@ -1,0 +1,7 @@
+.main-page {
+    @apply flex h-screen w-full justify-center items-center bg-gray-800;
+
+    &__hero {
+        @apply flex flex-col gap-y-8 justify-center max-w-[40em] w-full h-full;
+    }
+}

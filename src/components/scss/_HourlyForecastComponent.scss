@@ -1,0 +1,16 @@
+.hourly-forecast-component {
+    @apply bg-gray-500 p-8 space-y-4 rounded-md text-white;
+
+    &__title {
+        @apply uppercase text-sm;
+    }
+
+    .swiper {
+        @apply py-6;
+
+        &__item {
+            @apply flex flex-col gap-y-4 items-center;
+
+        }
+    }
+}
