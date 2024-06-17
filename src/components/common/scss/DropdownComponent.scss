@@ -1,0 +1,23 @@
+.dropdown-component {
+    @apply max-w-32 w-full text-white;
+
+    .menu-button {
+        @apply py-4 px-6 rounded-md bg-gray-500 flex justify-center cursor-pointer;
+    }
+
+    .menu-items {
+        @apply absolute mt-2 bg-gray-500 shadow-sm rounded-md py-1 w-full;
+
+        &:focus {
+            @apply outline-none;
+        }
+
+        &__item {
+            @apply px-3 py-2 cursor-pointer;
+
+            &:hover {
+                @apply bg-gray-700 transition duration-500;
+            }
+        }
+    }
+}
