@@ -1,0 +1,35 @@
+.week-forecast-component {
+    @apply text-white h-full bg-gray-500 py-12 px-16 rounded-md max-w-[40em] w-full;
+
+    &__content {
+        @apply h-full flex flex-col gap-y-6;
+
+        .title {
+            @apply text-sm uppercase;
+        }
+
+        .list-wrapper {
+            @apply divide-y divide-gray-400 max-h-full overflow-y-auto;
+            scrollbar-width: none;
+    
+            &__item {
+                @apply py-12 grid grid-cols-3;
+            }
+        }
+    }
+    
+}
+
+@media all and (max-width: 1400px) {
+    .week-forecast-component {
+        @apply p-8;
+
+        &__content {
+            .list-wrapper {
+                &__item {
+                    @apply py-8;
+                }
+            }
+        }
+    }
+}
