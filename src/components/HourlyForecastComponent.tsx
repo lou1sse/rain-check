@@ -4,7 +4,6 @@ import styles from "./scss/styles.module.scss"
 
 import "swiper/css"
 import "swiper/css/navigation"
-import "swiper/css/pagination"
 import "swiper/css/scrollbar"
 
 const SAMPLE_DATA = [
@@ -41,7 +40,19 @@ export function HourlyForecastComponent() {
         Today&apos;s Forecast
       </p>
       <div className={styles.swiper}>
-        <Swiper spaceBetween={50} slidesPerView={5}>
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={10}
+          breakpoints={{
+            425: {
+              slidesPerView: 3
+            },
+            1024: {
+              slidesPerView: 5,
+              spaceBetween: 50
+            }
+          }}
+        >
           {map(SAMPLE_DATA, (item, index) => (
             <SwiperSlide key={index}>
               <div className={styles.swiper__item}>
