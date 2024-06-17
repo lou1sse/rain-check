@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { CurrentForecastData, useForecast } from "../api"
+import { useForecast } from "../api"
 import {
   CurrentForecastComponent,
   HourlyForecastComponent,
@@ -11,8 +11,6 @@ import styles from "./scss/styles.module.scss"
 
 function MainPage() {
   const [keyword, setKeyword] = useState<string>("")
-  const [currentForecast, setCurrentForecast] =
-    useState<CurrentForecastData>()
 
   const { currentForecastData, currentForecastRequest } = useForecast(
     keyword || "Manila"
@@ -22,8 +20,6 @@ function MainPage() {
     if (!currentForecastData) {
       currentForecastRequest()
     }
-
-    setCurrentForecast(currentForecastData)
   }, [currentForecastData])
 
   return (
@@ -41,7 +37,7 @@ function MainPage() {
               options={["Celsius", "Fahrenheit"]}
             />
           </div>
-          <CurrentForecastComponent data={currentForecast} />
+          <CurrentForecastComponent data={currentForecastData} />
           <HourlyForecastComponent />
         </div>
         <WeekForecastComponent />
