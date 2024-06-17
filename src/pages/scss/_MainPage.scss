@@ -1,7 +1,25 @@
 .main-page {
-    @apply flex h-screen w-full justify-center items-center bg-gray-800;
+    @apply flex h-screen justify-center items-center bg-gray-800;
 
-    &__hero {
-        @apply flex flex-col gap-y-8 justify-center max-w-[40em] w-full h-full;
+    &__content {
+        @apply max-h-[40em] w-full h-full flex items-center justify-center gap-x-4;
+
+        .hero {
+            @apply flex flex-col gap-y-8 justify-between max-w-[40em] w-full h-full;
+
+            &__header {
+                @apply flex gap-x-2;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1400px) {
+    .main-page {
+        @apply flex w-full h-full px-4 py-12 overflow-y-auto;
+        
+        &__content {
+            @apply max-h-full flex flex-col gap-y-4;
+        }
     }
 }
