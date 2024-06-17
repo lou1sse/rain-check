@@ -20,10 +20,12 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
+  "types": ["vite/client"],
   "include": [
     "src/**/*",
     "./**/*",
     ".eslintrc.cjs",
+    "vite-env.d.ts"
   ],
   "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
